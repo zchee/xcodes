@@ -18,7 +18,7 @@ all: xcodes
 # https://github.com/apple/swift/pull/26660
 .PHONY: xcodes
 xcodes: $(SOURCES)
-	@swift build \
+	@bear --verbose --force-preload --force-wrapper -- swift build \
 		--configuration release \
 		-Xswiftc -Onone \
 		--disable-sandbox \
